@@ -1,1 +1,5 @@
-/downloaded
+downloaded/
+node_modules/
+
+
+package-lock.json
