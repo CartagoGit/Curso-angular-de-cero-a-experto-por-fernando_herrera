@@ -1,1 +1,88 @@
-<p>ordenar works!</p>
+<div class="text-layout">
+  <h1>Pipes Personalizados</h1>
+  <p>
+    Pipes creados por mí, para aprender como crearlos y como usarlos.
+  </p>
+
+
+</div>
+
+<div class="grid">
+  <div class="col-12">
+    <p-fieldset legend="Upper/Lower case, creando el Pipe" [toggleable]="true">
+      <pre>{{'Texto a cambiar' | mayusculas:enMayusculas}}</pre>
+      <button pButton pRipple label="Cambiar Capitalizacion" class="p-button-raised p-button-text"
+        (click)="cambiarCapitalizacion()"></button>
+    </p-fieldset>
+
+  </div>
+
+</div>
+<div class="grid mt-5 mb-5">
+  <div class="col-12">
+    <p-fieldset legend="Tabla con Pipes personalizados para ordenar y cambiar los textos de los datos recibidos"
+      [toggleable]="true">
+      <div class="grid">
+        <div class="col-12 mt-2">
+          <p-toolbar>
+            <div class="p-toolbar-group-left"></div>
+
+            <div class="p-toolbar-group-right">
+              <button pButton pRipple icon="pi pi-sort" label="Por Nombre" class="mr-1"
+                (click)="cambiarOrden('nombre')"></button>
+              <button pButton pRipple icon="pi pi-sort" label="Vuela" class="mr-1 p-button-success"
+                (click)="cambiarOrden('vuela')"></button>
+              <button pButton pRipple icon="pi pi-sort" label="Por Color" class="mr-1 p-button-help"
+                (click)="cambiarOrden('color')"></button>
+
+            </div>
+          </p-toolbar>
+        </div>
+        <div class="col-12 ">
+          <p-table [value]="heroes | ordenar:ordenarPor" responsiveLayout="scroll">
+            <ng-template pTemplate="header">
+              <tr>
+                <th>Nombre</th>
+                <th>Vuela</th>
+                <th>Color</th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-heroe>
+              <tr>
+                <td>{{heroe.nombre}}</td>
+                <td>{{heroe.vuela | vuela | titlecase}}</td>
+                <td>{{heroe.color | color | titlecase}}</td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+      </div>
+
+    </p-fieldset>
+
+  </div>
+</div>
+
+<div class="grid">
+  <div class="col-12">
+    <p-fieldset legend="Tabla propia de PrimeNg preparada para ordenar sus elementos" [toggleable]="true" class="">
+      <p-table [value]="heroes" responsiveLayout="scroll">
+        <ng-template pTemplate="header">
+          <tr>
+            <th pSortableColumn="nombre">Nombre<p-sortIcon field="nombre"></p-sortIcon></th>
+            <th pSortableColumn="vuela">Vuela<p-sortIcon field="vuela"></p-sortIcon></th>
+            <th pSortableColumn="color">Color<p-sortIcon field="color"></p-sortIcon></th>
+
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-heroe>
+          <tr>
+            <td>{{heroe.nombre}}</td>
+            <td>{{heroe.vuela | vuela | titlecase}}</td>
+            <td>{{heroe.color | color | titlecase}}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </p-fieldset>
+  </div>
+</div>
