@@ -12,4 +12,8 @@ En esta app aprenderemos a usar el LazyLoad asi como las rutas hijas de nuestras
 
 ## Código de la sección 13 Angular Material y Flex-Layouts
 
+<https://github.com/Klerith/heroesApp-Angular/releases/tag/v0.13.0>
+
+## Código de la seccion 14 Crud y más contenido de Angular Material
+
 <>

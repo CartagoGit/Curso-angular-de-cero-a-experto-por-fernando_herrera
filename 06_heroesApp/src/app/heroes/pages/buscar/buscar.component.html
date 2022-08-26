@@ -1,1 +1,51 @@
-<p>buscar works!</p>
+<div fxLayout="column">
+  <div>
+    <h1>Buscador de Héroes</h1>
+  </div>
+  <mat-divider> </mat-divider>
+  <div class="autocomplete-container">
+    <form fxLayout="column" class="autocomplete-form">
+      <mat-form-field appearance="fill">
+        <mat-label>Término a buscar...</mat-label>
+        <input
+          type="text"
+          placeholder=""
+          aria-label="Término a buscar..."
+          [ngModelOptions]="{ standalone: true }"
+          [(ngModel)]="termino"
+          matInput
+          [matAutocomplete]="autocomplete"
+          (input)="buscando()"
+          spellcheck="false"
+          (ngModelChange)="valueChange($event)"
+        />
+
+        <mat-autocomplete
+          autoActiveFirstOption
+          #autocomplete="matAutocomplete"
+          (optionSelected)="opcionSeleccionada($event)"
+          [displayWith]="getOptionText"
+        >
+          <!-- <----------- -->
+          <div *ngIf="heroes.length > 0; else noEncontro">
+            <mat-option *ngFor="let heroe of heroes" [value]="heroe">
+              {{ heroe.superhero }}
+            </mat-option>
+          </div>
+          <ng-template #noEncontro>
+            <mat-option *ngIf="termino.length > 0" value="">
+              No se encontro nada con la búsqueda "{{ termino }}"
+            </mat-option>
+          </ng-template>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+  </div>
+  <div fxLayout="row">
+    <div *ngIf="heroeSeleccionado">
+      <app-heroe-tarjeta [heroe]="heroeSeleccionado"></app-heroe-tarjeta>
+    </div>
+    <pre>{{ heroeSeleccionado | json }}</pre>
+  </div>
+  <pre>TODO*** Hay un error en ""termino""": {{ termino | json}}</pre>
+</div>

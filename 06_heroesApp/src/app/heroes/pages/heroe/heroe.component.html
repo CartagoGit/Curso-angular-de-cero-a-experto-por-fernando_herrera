@@ -1,1 +1,37 @@
-<p>heroe works!</p>
+<mat-grid-list cols="1" rowHeight="2:1" *ngIf="!heroe; else divHeroe">
+  <mat-grid-tile>
+    <mat-spinner></mat-spinner>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<ng-template #divHeroe>
+  <!-- {{ heroe | json }} -->
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="30px">
+    <div fxFlex="50" fxLayout="column" fxLayoutAlign=" end">
+      <!-- <div fxLayout="column" fxLayoutAlign=" end"> -->
+      <!-- <div fxFlex="100"> -->
+      <h1>{{ heroe.superhero }}</h1>
+      <small> {{ heroe.alter_ego }}</small>
+      <br />
+      <img [src]="heroe | imagen" alt="{{ heroe.superhero }} imagen" />
+      <!-- </div> -->
+      <!-- </div> -->
+    </div>
+
+    <div fxFlex="50">
+      <h1>Información</h1>
+      <mat-divider> </mat-divider>
+      <mat-list>
+        <mat-list-item>Id: {{ heroe.id }}</mat-list-item>
+        <mat-list-item>Nombre: {{ heroe.superhero }}</mat-list-item>
+        <mat-list-item>
+          Primera aparición: {{ heroe.first_appearance }}
+        </mat-list-item>
+        <mat-list-item> Personajes: {{ heroe.characters }} </mat-list-item>
+        <mat-list-item>Editorial: {{ heroe.publisher }}</mat-list-item>
+      </mat-list>
+      <br />
+      <button mat-button color="accent" (click)="regresar()">Regresar</button>
+    </div>
+  </div>
+</ng-template>
