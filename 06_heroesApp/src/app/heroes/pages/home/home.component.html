@@ -31,8 +31,9 @@
     >
       <mat-icon> menu </mat-icon>
     </button>
+    <span>{{auth.usuario}}</span>
     <span class="spacer"></span>
-    <button mat-button>Logout</button>
+    <button mat-button (click)="logout()">Logout</button>
   </mat-toolbar>
   <div class="container">
     <router-outlet></router-outlet>

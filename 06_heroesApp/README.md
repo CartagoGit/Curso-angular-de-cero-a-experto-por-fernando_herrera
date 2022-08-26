@@ -17,3 +17,7 @@ En esta app aprenderemos a usar el LazyLoad asi como las rutas hijas de nuestras
 ## Código de la seccion 14 Crud y más contenido de Angular Material
 
 <https://github.com/Klerith/heroesApp-Angular/releases/tag/v0.14.0>
+
+## Código de la seccion de Guards y proteccion de rutas con servicio de autenticacion básico
+
+<https://github.com/Klerith/heroesApp-Angular/releases/tag/v0.15.0>
