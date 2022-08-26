@@ -17,6 +17,12 @@ import { ActivatedRoute } from '@angular/router';
       .container {
         margin: 10px;
       }
+
+      mat-toolbar {
+        position: sticky;
+        top: 0px;
+        z-index: 1;
+      }
     `,
   ],
 })

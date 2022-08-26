@@ -33,4 +33,22 @@ export class HeroesService {
     const fullUrl = `${this.baseUrl}/${endpoint}`;
     return this.http.get<Heroe[]>(fullUrl);
   }
+
+  agregarHeroe(heroe: Heroe): Observable<Heroe> {
+    const endpoint = 'heroes';
+    const fullUrl = `${this.baseUrl}/${endpoint}`;
+    return this.http.post<Heroe>(fullUrl, heroe);
+  }
+
+  actualizarHeroe(heroe: Heroe): Observable<Heroe> {
+    const endpoint = `heroes/${heroe.id}`;
+    const fullUrl = `${this.baseUrl}/${endpoint}`;
+    return this.http.put<Heroe>(fullUrl, heroe);
+  }
+
+  borrarHeroe(id: string): Observable<any> {
+    const endpoint = `heroes/${id}`;
+    const fullUrl = `${this.baseUrl}/${endpoint}`;
+    return this.http.delete<any>(fullUrl);
+  }
 }

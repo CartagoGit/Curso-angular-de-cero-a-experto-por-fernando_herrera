@@ -1,0 +1,25 @@
+<div
+  fxLayout="column"
+  fxLayoutAlign="space-between center"
+  fxFill
+  fxLayoutGap="10"
+>
+  <h1>¿Está seguro?</h1>
+  <mat-divider fxLayout="row" fxFlexAlign="stretch"> </mat-divider>
+  <div fxFlex="50" fxLayout="column" fxLayoutAlign="space-evenly center">
+    <p>Esta a punto de borrar a</p>
+    <p><strong>{{heroe.superhero}}</strong></p>
+    <p>¿Desea continuar?</p>
+  </div>
+
+  <div
+    fxLayout="row"
+    fxLayoutAlign="space-evenly center"
+    fxFlexAlign="stretch"
+  >
+    <button mat-raised-button (click)="borrar()" color="warn">
+      Si, Borrar
+    </button>
+    <button mat-raised-button (click)="cancelar()">Cancelar</button>
+  </div>
+</div>

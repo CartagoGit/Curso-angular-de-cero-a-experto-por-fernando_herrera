@@ -40,4 +40,8 @@ export class HeroeComponent implements OnInit {
   regresar(): void {
     this.router.navigate(['/heroes/listado']);
   }
+
+  editar(): void {
+    this.router.navigate(['/heroes/editar', this.heroe.id]);
+  }
 }

@@ -18,7 +18,7 @@
       <!-- </div> -->
     </div>
 
-    <div fxFlex="50">
+    <div fxFlex="50" fxLayoutGap="10">
       <h1>Información</h1>
       <mat-divider> </mat-divider>
       <mat-list>
@@ -31,7 +31,12 @@
         <mat-list-item>Editorial: {{ heroe.publisher }}</mat-list-item>
       </mat-list>
       <br />
-      <button mat-button color="accent" (click)="regresar()">Regresar</button>
+      <button mat-raised-button color="accent" (click)="regresar()">
+        Regresar
+      </button>
+      <button mat-raised-button color="primary" (click)="editar()">
+        Editar
+      </button>
     </div>
   </div>
 </ng-template>

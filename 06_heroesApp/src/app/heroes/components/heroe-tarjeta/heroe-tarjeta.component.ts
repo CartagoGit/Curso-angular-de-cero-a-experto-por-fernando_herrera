@@ -9,6 +9,12 @@ import { Heroe } from '../../interfaces/heroe.interface';
       mat-card {
         margin-top: 20px;
       }
+
+      .mat-card-image {
+        border-radius: 100px !important;
+        max-height: 400px;
+      }
+
     `,
   ],
 })

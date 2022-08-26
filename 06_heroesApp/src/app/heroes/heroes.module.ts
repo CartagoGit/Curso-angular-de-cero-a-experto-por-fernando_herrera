@@ -15,6 +15,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ListadoComponent } from './pages/listado/listado.component';
 
 import { ImagenPipe } from './pipes/imagen.pipe';
+import { ConfirmarModalComponent } from './components/confirmar-modal/confirmar-modal.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ImagenPipe } from './pipes/imagen.pipe';
     HomeComponent,
     ListadoComponent,
     ImagenPipe,
+    ConfirmarModalComponent,
   ],
   imports: [
     CommonModule,
