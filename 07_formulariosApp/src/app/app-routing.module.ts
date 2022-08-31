@@ -19,6 +19,14 @@ const routes: Routes = [
     },
   },
   {
+    path: 'auth',
+    loadChildren: () => {
+      return import('./auth/auth.module').then((module) => {
+        return module.AuthModule;
+      });
+    },
+  },
+  {
     path: '**',
     redirectTo: 'template',
   },

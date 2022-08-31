@@ -17,3 +17,11 @@ Aprenderemos como usar formularios reactivos y sus validaciones
 ### Codigo de la seccion 17
 
 <https://github.com/Klerith/angular-forms/releases/tag/v0.17.1>
+
+## En la seccion 18
+
+Aprenderemos como usar validaciones personalizadas, y personalizaciones asyncronas
+
+### Código de la seccion 18
+
+<https://github.com/Klerith/angular-forms/releases/tag/v0.18.0>
