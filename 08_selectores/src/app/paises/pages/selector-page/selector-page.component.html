@@ -1,0 +1,87 @@
+<h1 class="mt-5">Selectores Anidados</h1>
+<hr />
+<form [formGroup]="miFormulario" (ngSubmit)="guardar()">
+  <!-- REGION -->
+  <div class="row mb-3">
+    <div class="col">
+      <label class="form-label">Continente:</label>
+      <select class="form-select" formControlName="region">
+        <!-- (change)="seleccionarRegion()" -->
+        <option value="">-- Seleccione Continente --</option>
+        <option
+          *ngFor="let region of regiones; let i = index"
+          [value]="region | lowercase"
+        >
+          {{ region }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <!-- PAISES -->
+  <div class="row mb-3" *ngIf="paises?.length !== 0">
+    <div class="col">
+      <label class="form-label">Paises:</label>
+      <select class="form-select" formControlName="pais">
+        <option value="">-- Seleccione el Pais --</option>
+        <option *ngFor="let pais of paises; let i = index" [value]="pais.cca3">
+          {{ pais.name.common }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <!-- FRONTERAS -->
+  <div class="row mb-3" *ngIf="fronteras?.length !== 0">
+    <div class="col">
+      <label class="form-label">Frontera:</label>
+      <select class="form-select" formControlName="frontera">
+        <option value="">-- Seleccione el país fronterizo --</option>
+        <option
+          *ngFor="let frontera of fronteras; let i = index"
+          [value]="frontera.cca3"
+        >
+          {{ frontera.name.common }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="row" *ngIf="cargando && !error">
+    <div class="col">
+      <div class="alert alert-primary d-flex">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Cargando...</span>
+        </div>
+        <span class="text-primary ms-2 align-self-center">Cargando...</span>
+      </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="error">
+    <div class="col">
+      <div class="alert alert-danger d-flex justify-content-between">
+        <div class="spinner-grow text-danger" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <span class="ms-2 align-self-center">
+          Hubo un error al cargar los datos desde la API Rest
+        </span>
+        <div class="spinner-grow text-danger" role="status">
+          <span class="visually-hidden">Error</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="estaFronteraSeleccionada">
+    <div class="col">
+      <button type="submit" class="btn btn-primary float-end">
+        Seleccionar
+      </button>
+    </div>
+  </div>
+</form>
+
+<hr />
+<h3>Datos visuales del Formulario</h3>
+<pre>{{ miFormulario.valid }}</pre>
+<pre>{{ miFormulario.value | json }}</pre>
