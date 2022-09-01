@@ -1,0 +1,29 @@
+<h2>Comprobacion de la mayoria de ciclos de vida</h2>
+Evalucación de salto del evento en el console log y los archivos de la app
+<hr />
+<p>{{ nombre }}</p>
+<input type="text" placeholder="Hola Mundo" [(ngModel)]="nombre" />
+
+<button (click)="guardar()">Click</button>
+
+<br /><br />
+<hr />
+<h2>Comprobacion del ciclo de vida ngOnChanges</h2>
+<p>
+  Cambia en el nuevo componente al cambiar los archivos enviados por el input
+</p>
+<app-muestra-nombre [nombre]="nombre"></app-muestra-nombre>
+
+<hr />
+<h2>Comprobacion de ngOndestroy</h2>
+<h3>Segundos: {{ segundos }}</h3>
+<p>
+  Si al eliminar el componte con el boton "Ocultar" no paramos el intervalo del
+  componente, tendremos una fuga de memoria, por lo que con el metodo
+  ngOnDestroy podemos eliminarlo justo cuando el componente se elimina
+</p>
+
+<h3>
+  Hay que tener cuidado con dejar abiertos Observables abiertos al eliminar un
+  componente
+</h3>
