@@ -1,0 +1,32 @@
+<div #mapa class="mapa-container"></div>
+<!-- id='mapa' -->
+<div class="row">
+  <div class="col-12">
+    <label class="form-label">
+      Zoom
+      {{ zoomLevel | number: ".0-2" }}
+
+    </label>
+  </div>
+  <div class="col-12">
+    <label class="form-label">
+      Lng / Lat: [ {{ center[0] | number: ".0-30" }} /
+      {{ center[1] | number: ".0-30" }} ]
+    </label>
+  </div>
+  <div class="col-12">
+    <input
+      type="range"
+      class="form-range"
+      [value]="zoomLevel"
+      min="0.5"
+      max="20.5"
+      (input)="zoomCambio(zoomInput.value)"
+      #zoomInput
+    />
+  </div>
+  <div class="col-12">
+    <button class="btn btn-primary" (click)="zoomOut()">-</button>
+    <button class="btn btn-primary float-end" (click)="zoomIn()">+</button>
+  </div>
+</div>

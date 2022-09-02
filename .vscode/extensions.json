@@ -1,5 +1,7 @@
 {
     "recommendations": [
-        "Angular.ng-template"
+        "angular.ng-template",
+        "johnpapa.angular2",
+        "johnpapa.Angular2"
     ]
 }
