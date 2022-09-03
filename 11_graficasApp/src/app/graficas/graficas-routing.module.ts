@@ -10,7 +10,7 @@ const routes: Routes = [
     path: '',
     children: [
       {
-        path: 'barra',
+        path: 'barras',
         component: BarrasComponent,
       },
       {
@@ -28,7 +28,7 @@ const routes: Routes = [
 
       {
         path: '**',
-        redirectTo: 'barra',
+        redirectTo: 'barras',
       },
     ],
   },

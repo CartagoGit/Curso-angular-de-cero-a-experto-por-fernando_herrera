@@ -1,1 +1,27 @@
-<p>dona-http works!</p>
+<h1>Gráfica de Dona desde Http</h1>
+<hr />
+
+<div
+  *ngIf="doughnutChartData.datasets.length === 0; else divGrafica"
+  class="alert alert-info"
+>
+  Cargando...
+</div>
+<ng-template #divGrafica>
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <div style="display: block">
+        <canvas
+          baseChart
+          [data]="doughnutChartData"
+          type="doughnut"
+          (chartClick)="chartClicked($event)"
+        >
+        </canvas>
+        <span class="float-end text-primary mt-3">
+          Información en Billones de usarios
+        </span>
+      </div>
+    </div>
+  </div>
+</ng-template>
