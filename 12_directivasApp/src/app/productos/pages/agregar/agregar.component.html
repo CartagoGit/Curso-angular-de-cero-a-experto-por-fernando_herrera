@@ -1,0 +1,47 @@
+<h3>Agregar Producto - {{ texto1 }}</h3>
+<hr />
+
+<form [formGroup]="miFormulario">
+  <div class="row g-3 align-items-center mb-3">
+    <div class="col-auto">
+      <label class="col-form-label">Nombre:</label>
+    </div>
+    <div class="col-auto">
+      <input class="form-control" formControlName="nombre" />
+    </div>
+    <div class="col-auto">
+      <span
+        estilos="form-text"
+        error-msg
+        [mensaje]="texto1"
+        [color]="color"
+        [valido]="tieneError('nombre')"
+      >
+        <!-- *ngIf="tieneError('nombre')" -->
+        mimi
+      </span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-primary" (click)="cambiarNombre()">
+        Cambiar Texto directiva
+      </button>
+      <button class="btn btn-primary ms-2" (click)="cambiarColor()">
+        Cambiar color
+      </button>
+    </div>
+  </div>
+</form>
+
+<h3 class="mt-5" mensaje="Formulario">Formulario</h3>
+<pre>Valid: {{ miFormulario.valid }}</pre>
+<pre>Value: {{ miFormulario.value | json }}</pre>
+
+<hr />
+<h3>Directiva Estructural</h3>
+<hr />
+<div class="row" *customIf="miFormulario.valid">
+  <div class="col"><div class="alert alert-success">Todo OK!</div></div>
+</div>
