@@ -38,6 +38,7 @@ export const crearUsuario = async (
 			uid: dbUsuario.id,
 			name: dbUsuario.name,
 			token,
+			email: dbUsuario.email,
 			msg: "Se ha creado el usuario",
 		});
 	} catch (error) {
@@ -72,6 +73,7 @@ export const login = async (req: Request, res: Response): Promise<Response> => {
 			ok: true,
 			uid: dbUser.id,
 			name: dbUser.name,
+			email,
 			token,
 			msg: "Usuario logeado correctamente",
 		});
@@ -84,13 +86,20 @@ export const login = async (req: Request, res: Response): Promise<Response> => {
 };
 
 export const revalidarToken = async (req: Request, res: Response) => {
-	const { uid, name } = req.user!;
-	const token = await generarJWT(uid!, name!);
+	const { uid } = req.user!;
+
+	// Leer de la base de datos el email
+	const dbUser = await Usuario.findById(uid);
+	const { name, email } = dbUser!;
+
+	// Generamos un nuevo token
+	const token = await generarJWT(uid!, name);
 	return res.json({
 		ok: true,
 		msg: "Revalidar token de Json Web Token - JWT",
-		uid: req.user?.uid,
-		name: req.user?.name,
+		uid,
+		name,
+		email,
 		token,
 	});
 };

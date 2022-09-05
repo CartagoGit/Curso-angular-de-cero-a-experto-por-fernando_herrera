@@ -1,0 +1,14 @@
+<h1>Página de prueba de autenticación</h1>
+<hr />
+<h2>Dashboard</h2>
+<p>
+  Ejercicio de autenticación con Json Web Token / JWT, un backend real y
+  protección de rutas con canLoad y canActivate con guardas de Angular
+</p>
+
+<p>Esta página solo deberia funcionar si estamos autenticados</p>
+
+<h4>Información del Usuario</h4>
+<pre>{{ usuario | json }}</pre>
+
+<button (click)="logout()">Logout</button>

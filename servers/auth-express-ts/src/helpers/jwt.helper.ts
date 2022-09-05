@@ -1,8 +1,11 @@
 import jwt, { Secret } from "jsonwebtoken";
 
-export const generarJWT = (uid: string, name: string): Promise<string> => {
+export const generarJWT = (
+	uid: string,
+	name: string,
+	// email: string
+): Promise<string> => {
 	const payload = { uid, name };
-
 	//Ya que jwt no trabaja con promesas creamos una para que nos devuelva el resultado en cuanto termine el proceso
 	return new Promise((resolve, reject) => {
 		//Creamos la firma para el jwt
