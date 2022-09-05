@@ -85,7 +85,7 @@ export const login = async (req: Request, res: Response): Promise<Response> => {
 	}
 };
 
-export const revalidarToken = async (req: Request, res: Response) => {
+export const revalidarToken = async (req: any, res: Response) => {
 	const { uid } = req.user!;
 
 	// Leer de la base de datos el email

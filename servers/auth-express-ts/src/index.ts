@@ -1,3 +1,4 @@
+import path from "path";
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
@@ -26,6 +27,11 @@ app.use(express.json());
 
 // RUTAS
 app.use("/api/auth", router);
+
+//Manejar demas rutas
+app.get("*", (_req, res) => {
+	res.sendFile(path.resolve(__dirname, "public/index.html"));
+});
 
 // Creamos la llamada al servidor
 app.listen(PORT, () => {

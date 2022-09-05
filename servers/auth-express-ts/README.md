@@ -15,3 +15,19 @@ Tambien hemos tenido que inferir y cambiar una interfaz personalizada para que l
 ## Codigo de la seccion en Javascript / en el repositorio se puede encontrar el mio en TypeScript
 
 <https://github.com/Klerith/angular-auth-mean/releases/tag/v0.24.0>
+
+## Para generar la variable de entorno de Heroku
+
+Ya que no funcionaba al instalar el Cli de Heroku para desplegar el server de node
+
+```text
+set PATH=%PATH%;C:\Program Files\Heroku\bin
+```
+
+poniendo esto con la ruta en la terminal, obliga a Windows a aceptar la ruta donde se haya instalado Heroku
+
+### Para actualizarlo
+
+simplemente escribimo "heroku update"
+
+y para comprobar la version simplemente "heroku --version"

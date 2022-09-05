@@ -9,7 +9,7 @@ interface Payload {
 	exp: number;
 }
 
-export const validarJWT = (req: Request, res: Response, next: NextFunction) => {
+export const validarJWT = (req: any, res: Response, next: NextFunction) => {
 	const token = req.header("x-token");
 
 	if (!token) {
