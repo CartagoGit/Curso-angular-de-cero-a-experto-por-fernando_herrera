@@ -4,6 +4,8 @@ import { environment } from '../../../environments/environment';
 import { Feature, ResultadoBusqueda } from '../interfaces/resultado-busqueda';
 import { PlacesApiClient } from '../api/places-api-client';
 import { MapService } from './map.service';
+import { RutaApiClient } from '../api/ruta-api-client';
+import { ResultadoRuta } from '../interfaces/resultado-ruta';
 
 @Injectable({
   providedIn: 'root',
@@ -12,8 +14,12 @@ export class ApiService {
   public isLoadingPlaces: boolean = false;
   public places: Feature[] = [];
 
+  public estaCargandoRutas: boolean = false;
+  public hayRuta: boolean = false;
+
   constructor(
     private placesApiClient: PlacesApiClient,
+    private rutaApiClient: RutaApiClient,
     private mapService: MapService
   ) {}
 
@@ -38,6 +44,35 @@ export class ApiService {
         },
         complete: () => {
           this.isLoadingPlaces = false;
+        },
+      });
+  }
+
+  removePlaces() {
+    this.places = [];
+    this.isLoadingPlaces = false;
+  }
+
+  getRouteBetweenPoints(start: [number, number], end: [number, number]) {
+    // console.log(start, end);
+    this.estaCargandoRutas = true;
+    this.hayRuta = false;
+    this.rutaApiClient
+      .get<ResultadoRuta>('/' + start.join(',') + ';' + end.join(','))
+      .subscribe({
+        next: (resp) => {
+          const route = resp.routes[0];
+          if (!route?.distance) {
+            // console.log('no existe', resp);
+            this.hayRuta = false;
+            return;
+          }
+          this.hayRuta = true;
+          this.mapService.drawPolyline(route);
+        },
+        error: () => {},
+        complete: () => {
+          this.estaCargandoRutas = false;
         },
       });
   }

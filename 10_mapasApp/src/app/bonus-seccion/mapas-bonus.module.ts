@@ -9,6 +9,7 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { SearchPageComponent } from './screens/search-page/search-page.component';
+import { RutaPageComponent } from './screens/ruta-page/ruta-page.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SearchPageComponent } from './screens/search-page/search-page.component
     SearchBarComponent,
     SearchResultsComponent,
     SearchPageComponent,
+    RutaPageComponent,
   ],
   imports: [CommonModule, MapasBonusRoutingModule],
 })

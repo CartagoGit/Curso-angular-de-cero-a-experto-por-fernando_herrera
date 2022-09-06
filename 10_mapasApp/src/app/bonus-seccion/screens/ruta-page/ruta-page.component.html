@@ -1,0 +1,32 @@
+<ul class="ruta-container list-group">
+  <h6 class="d-flex justify-content-center pt-2">Selecciona dos puntos</h6>
+
+  <li *ngFor="let marker of markers; let i = index" class="list-group-item">
+    <h5>Coordenadas nº {{ i + 1 }}</h5>
+    <div class="d-flex justify-content-between">
+      <span>Lng</span> <span>{{ marker.getLngLat().lng }}</span>
+    </div>
+    <hr class="mt-1 mb-1" />
+    <div class="d-flex justify-content-between">
+      <span>Lat</span> <span>{{ marker.getLngLat().lat }}</span>
+    </div>
+  </li>
+  <div
+    *ngIf="!hayRuta && markers.length == 2 && !estaCargandoRuta"
+    class="alert alert-danger text-center mt-2 mb-1"
+  >
+    No se encontraron rutas entre las ubicaciones
+  </div>
+  <div *ngIf="estaCargandoRuta" class="alert alert-info mt-2 mb-1">
+    Espere a que cargue la ruta...
+  </div>
+  <div *ngIf="hayRuta" class="p-3 alert alert-success">
+    <div class="d-flex justify-content-between mt-2">
+      <span>Distancia: </span><span>{{ distance | number: ".2-2" }} kms</span>
+    </div>
+    <hr class="mt-1 mb-1" />
+    <div class="d-flex justify-content-between">
+      <span>Tiempo: </span><span>{{ time }}</span>
+    </div>
+  </div>
+</ul>

@@ -19,3 +19,14 @@ const color = "#xxxxxx".replace(/x/g, y=>(Math.random()*16|0).toString(16));
 ## Código de la Sección 21
 
 <https://github.com/Klerith/angular-mapas/releases/tag/v0.21.0>
+
+## En la seccion 27 se realiza un Bonus de esta app ampliando funcionalidades
+
+En mi caso he ido modificando lo dado en las clases para incorporarlo a la app ya creada
+Dado el caso el código no es igual, que si similar al de la sección.
+
+Aun así, se puede comparar el codigo de la seccion con el realizado por mí
+
+## Codigo de la seccion 27
+
+<https://github.com/Klerith/angular-maps>

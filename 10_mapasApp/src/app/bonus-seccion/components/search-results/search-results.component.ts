@@ -27,9 +27,19 @@ export class SearchResultsComponent implements OnInit {
   get places() {
     return this.apiService.places;
   }
+
+  get colors() {
+    return this.mapService.colorMarkers;
+  }
+
   constructor(private apiService: ApiService, private mapService: MapService) {}
 
   ngOnInit(): void {}
+
+  ngOnDestroy(): void {
+    this.mapService.removeMarkers();
+    this.apiService.removePlaces();
+  }
 
   flyTo(place: Feature) {
     this.selectedId = place.id;

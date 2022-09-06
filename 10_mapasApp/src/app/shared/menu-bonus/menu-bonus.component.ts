@@ -22,5 +22,9 @@ export class MenuBonusComponent {
       ruta: 'mapas-bonus/buscador',
       nombre: 'Buscador',
     },
+    {
+      ruta: 'mapas-bonus/rutas',
+      nombre: 'Rutas',
+    },
   ];
 }
