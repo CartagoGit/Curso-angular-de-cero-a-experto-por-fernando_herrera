@@ -1,0 +1,12 @@
+<ul class="list-group">
+  <li class="list-group-item bonus">Sección Bonus</li>
+  <li
+    *ngFor="let item of menuItems"
+    class="list-group-item"
+    [routerLink]="item.ruta"
+    routerLinkActive="active"
+  >
+    {{ item.nombre }}
+  </li>
+</ul>
+

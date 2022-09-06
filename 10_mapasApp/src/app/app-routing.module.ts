@@ -7,6 +7,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./mapas/mapas.module').then((m) => m.MapasModule),
   },
+  {
+    path: 'mapas-bonus',
+    loadChildren: () =>
+      import('./mapas/bonus-seccion/mapas-bonus.module').then(
+        (m) => m.MapasBonusModule
+      ),
+  },
   { path: '**', redirectTo: 'mapas' },
 ];
 

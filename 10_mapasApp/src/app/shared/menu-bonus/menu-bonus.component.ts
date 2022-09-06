@@ -1,23 +1,27 @@
 import { Component } from '@angular/core';
 import { MenuItem } from '../interfaces/menu-item.interface';
 
-
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
+  selector: 'app-menu-bonus',
+  templateUrl: './menu-bonus.component.html',
   styles: [
     `
       li {
         cursor: pointer;
       }
+      .bonus{
+        cursor: auto;
+        background-color: #6F0386;
+        color: white
+      }
     `,
   ],
 })
-export class MenuComponent {
+export class MenuBonusComponent {
   menuItems: MenuItem[] = [
     {
-      ruta: 'mapas/fullscreen',
-      nombre: 'Full Screen',
+      ruta: 'mapas-bonus/geolocalizacion',
+      nombre: 'Geolocalización',
     },
     {
       ruta: 'mapas/zoom-range',

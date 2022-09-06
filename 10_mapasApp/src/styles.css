@@ -12,3 +12,10 @@ app-menu {
   left: 20px;
   z-index: 10;
 }
+
+app-menu-bonus {
+  position: fixed;
+  top: 220px;
+  left: 20px;
+  z-index: 10;
+}
