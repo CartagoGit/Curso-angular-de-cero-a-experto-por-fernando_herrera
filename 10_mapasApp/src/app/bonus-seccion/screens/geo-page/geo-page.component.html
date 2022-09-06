@@ -1,0 +1,8 @@
+<app-loading *ngIf="!isUserLocationReady ; else geoReady"></app-loading>
+<ng-template #geoReady>
+  <div class="geolocalizacion list-group">
+    <div class="list-group-item bonus"><small>Geolocalización en:</small></div>
+    <!-- <div class="list-group-item">[{{ geoLoc[0] }}, {{ geoLoc[1] }}]</div> -->
+    <div class="list-group-item btn-geo" (click)="goToGeo()">[{{ geoLoc[0] }}, {{ geoLoc[1] }}]</div>
+  </div>
+</ng-template>

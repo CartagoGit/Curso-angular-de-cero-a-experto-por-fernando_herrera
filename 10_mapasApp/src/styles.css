@@ -19,3 +19,9 @@ app-menu-bonus {
   left: 20px;
   z-index: 10;
 }
+
+.bonus {
+  cursor: auto !important;
+  background-color: #6f0386;
+  color: white;
+}

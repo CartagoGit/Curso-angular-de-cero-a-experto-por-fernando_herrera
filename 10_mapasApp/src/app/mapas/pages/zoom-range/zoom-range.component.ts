@@ -50,9 +50,10 @@ export class ZoomRangeComponent implements AfterViewInit, OnDestroy {
     this.mapa = new mapboxgl.Map({
       // container: 'mapa',
       container: this.divMapa.nativeElement,
-      style: 'mapbox://styles/mapbox/streets-v11',
+      style: 'mapbox://styles/mapbox/satellite-v9',
       center: this.center, // Latitud y Longitus, a la inversa que en google maps
       zoom: this.zoomLevel,
+      projection: { name: 'globe' },
     });
 
     // REGLA DE ORO, CUANDO SE CREA UN LISTENER HAY QUE DESTRUIRLO

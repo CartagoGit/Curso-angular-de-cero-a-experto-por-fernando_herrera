@@ -9,11 +9,6 @@ import { MenuItem } from '../interfaces/menu-item.interface';
       li {
         cursor: pointer;
       }
-      .bonus{
-        cursor: auto;
-        background-color: #6F0386;
-        color: white
-      }
     `,
   ],
 })
@@ -24,16 +19,8 @@ export class MenuBonusComponent {
       nombre: 'Geolocalización',
     },
     {
-      ruta: 'mapas/zoom-range',
-      nombre: 'Zoom Range',
-    },
-    {
-      ruta: 'mapas/marcadores',
-      nombre: 'Marcadores',
-    },
-    {
-      ruta: 'mapas/propiedades',
-      nombre: 'Propiedades',
+      ruta: 'mapas-bonus/buscador',
+      nombre: 'Buscador',
     },
   ];
 }

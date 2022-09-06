@@ -10,7 +10,7 @@ const routes: Routes = [
   {
     path: 'mapas-bonus',
     loadChildren: () =>
-      import('./mapas/bonus-seccion/mapas-bonus.module').then(
+      import('./bonus-seccion/mapas-bonus.module').then(
         (m) => m.MapasBonusModule
       ),
   },

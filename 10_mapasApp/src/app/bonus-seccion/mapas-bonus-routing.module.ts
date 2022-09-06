@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { GeoPageComponent } from './screens/geo-page/geo-page.component';
 import { MapScreenComponent } from './screens/map-screen/map-screen.component';
+import { SearchPageComponent } from './screens/search-page/search-page.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
       {
         path: 'geolocalizacion',
         component: GeoPageComponent,
+      },
+      {
+        path: 'buscador',
+        component: SearchPageComponent,
       },
     ],
   },

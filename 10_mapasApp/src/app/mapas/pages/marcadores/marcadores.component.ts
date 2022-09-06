@@ -56,6 +56,7 @@ export class MarcadoresComponent implements AfterViewInit, OnDestroy {
       style: 'mapbox://styles/mapbox/streets-v11',
       center: this.center, // Latitud y Longitus, a la inversa que en google maps
       zoom: this.zoomLevel,
+      projection: { name: 'naturalEarth' },
     });
 
     this.leerLocalStorage();

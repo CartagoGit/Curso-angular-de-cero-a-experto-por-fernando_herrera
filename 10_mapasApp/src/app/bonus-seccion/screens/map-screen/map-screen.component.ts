@@ -7,9 +7,7 @@ import { PlacesService } from '../../services/places.service';
   styles: [],
 })
 export class MapScreenComponent implements OnInit {
-  get isUserLocationReady() {
-    return this.placesService.isUserLocationReady;
-  }
+
 
   constructor(private placesService: PlacesService) {}
 

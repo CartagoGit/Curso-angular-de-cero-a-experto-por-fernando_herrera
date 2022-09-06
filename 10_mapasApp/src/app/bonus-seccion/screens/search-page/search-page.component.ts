@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-geo-page',
-  templateUrl: './geo-page.component.html',
+  selector: 'app-search-page',
+  templateUrl: './search-page.component.html',
   styles: [
   ]
 })
-export class GeoPageComponent implements OnInit {
+export class SearchPageComponent implements OnInit {
 
   constructor() { }
 
